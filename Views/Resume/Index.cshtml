@@ -1,0 +1,77 @@
+﻿@model ResumeMvc.Models.Resume
+@{
+    ViewData["Title"] = "Resume";
+}
+
+<div class="resume">
+    <div class="left-panel">
+        <div style="text-align:center; width:100%;">
+            <h1>@Model.FullName</h1>
+            <div class="title">@Model.Title</div>
+        </div>
+
+        <div class="profile-pic" style="margin-top:14px;">
+            <img src="@Model.PhotoUrl" alt="Profile" />
+        </div>
+
+        <ul class="info-list" style="margin-top:18px; width:100%;">
+            <li><span class="icon-circle">📞</span> <span>@Model.Phone</span></li>
+            <li><span class="icon-circle">✉️</span> <span>@Model.Email</span></li>
+            <li><span class="icon-circle">📍</span> <span>@Model.Address</span></li>
+        </ul>
+    </div>
+
+    <div class="right-panel">
+        <div class="section">
+            <h3>PROFILE</h3>
+            <div class="hr"></div>
+            <p class="profile-text">@Model.Aboutme</p>
+        </div>
+
+        <div class="section">
+            <h3>ILIKE</h3>
+            <div class="hr"></div>
+            @foreach (var e in Model.Ilike)
+            {
+                <div class="item">
+                  
+                    <div class="item-sub">@e.Favorite_Food &nbsp;</div>
+                    <div class="item-sub">@e.Favorite_Color &nbsp;</div>
+                    <div class="item-sub">@e.Favorite_Drinks &nbsp;</div>
+                    <div class="profile-text" style="font-size:14px; margin-top:6px;">
+                        @e.Favorite_Movie
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="section">
+            <h3>EDUCATION</h3>
+            <div class="hr"></div>
+            @foreach (var ed in Model.Educations)
+            {
+                <div class="item">
+                    <div class="item-title">@ed.Institution</div>
+                    <div class="item-sub">@ed.Year</div>
+                </div>
+            }
+        </div>
+
+        <div class="section">
+            <h3>MY_SKILLS</h3>
+            <div class="hr"></div>
+            @foreach (var c in Model.My_Skills)
+            {
+                <div class="item">
+                    <div class="profile-text">@c.Time_Management</div>
+                    <div class="profile-text">@c.Communication_Skills</div>
+                    <div class="profile-text">@c.Problem_Solving</div>
+                    <div class="profile-text">@c.Teamwork</div>
+                    <div class="profile-text">@c.Adaptability</div>
+                    <div class="profile-text">@c.Self_Motivation</div>
+                    <div class="profile-text">@c.Technical</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
