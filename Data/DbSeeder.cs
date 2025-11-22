@@ -16,7 +16,7 @@ namespace ResumeMvc.Data
                 Phone = "09876543213",
                 Address = "Bagumbayan Oas, Albay",
                 Aboutme = "I’m a motivated and hardworking person who loves improving myself and helping others. I enjoy learning, solving problems, and staying organized in everything I do.",
-                PhotoUrl = "/images/profile.png" // see note below
+                PhotoUrl = "/Image/download.jpg" // see note below
             };
 
             r.Ilike.Add(new Ilike
